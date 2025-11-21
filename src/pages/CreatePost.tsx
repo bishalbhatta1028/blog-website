@@ -328,7 +328,7 @@ const CreatePost = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="flex-1 bg-white text-[#1a0b2e] hover:bg-white/90 font-poppins font-medium h-12"
+                className="flex-1 bg-white dark:bg-white text-[#1a0b2e] dark:text-[#1a0b2e] hover:bg-white/90 dark:hover:bg-white/90 font-poppins font-medium h-12"
               >
                 {isSubmitting ? 'Publishing...' : 'Publish Post'}
               </Button>
@@ -336,7 +336,7 @@ const CreatePost = () => {
                 type="button"
                 variant="outline"
                 onClick={() => navigate('/dashboard')}
-                className="border-blue-400 text-black hover:bg-blue-400/10 font-poppins font-medium h-12"
+                className="border-blue-400 dark:border-blue-400 bg-white dark:bg-white text-black dark:text-black hover:bg-blue-400/10 dark:hover:bg-blue-400/10 font-poppins font-medium h-12"
               >
                 Cancel
               </Button>

@@ -176,7 +176,7 @@ const Auth = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full bg-white text-[#1a0b2e] hover:bg-white/90 font-poppins font-medium h-12"
+                    className="w-full bg-white dark:bg-white text-[#1a0b2e] dark:text-[#1a0b2e] hover:bg-white/90 dark:hover:bg-white/90 font-poppins font-medium h-12"
                     disabled={loginForm.formState.isSubmitting}
                   >
                     {loginForm.formState.isSubmitting ? 'Signing in...' : 'Sign In'}
@@ -287,7 +287,7 @@ const Auth = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full bg-white text-[#1a0b2e] hover:bg-white/90 font-poppins font-medium h-12"
+                    className="w-full bg-white dark:bg-white text-[#1a0b2e] dark:text-[#1a0b2e] hover:bg-white/90 dark:hover:bg-white/90 font-poppins font-medium h-12"
                     disabled={registerForm.formState.isSubmitting}
                   >
                     {registerForm.formState.isSubmitting ? 'Creating account...' : 'Sign Up'}

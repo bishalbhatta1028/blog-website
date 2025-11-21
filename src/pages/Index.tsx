@@ -48,13 +48,13 @@ const Index = () => {
               {isAuthenticated ? (
                 <>
                   <Link to="/dashboard">
-                    <Button size="lg" className="bg-white text-[#1a0b2e] hover:bg-white/90 gap-2 font-poppins font-medium">
+                    <Button size="lg" className="bg-white dark:bg-white text-[#1a0b2e] dark:text-[#1a0b2e] hover:bg-white/90 dark:hover:bg-white/90 gap-2 font-poppins font-medium">
                       <BookOpen className="h-5 w-5" />
                       Go to Dashboard
                     </Button>
                   </Link>
                   <Link to="/create">
-                    <Button size="lg" variant="outline" className="border-blue-400 text-black hover:bg-blue-400/10 gap-2 font-poppins font-medium">
+                    <Button size="lg" variant="outline" className="border-blue-400 dark:border-blue-400 bg-white dark:bg-white text-black dark:text-black hover:bg-blue-400/10 dark:hover:bg-blue-400/10 gap-2 font-poppins font-medium">
                       <PenSquare className="h-5 w-5" />
                       Write a Post
                     </Button>
@@ -65,7 +65,7 @@ const Index = () => {
                   <Button 
                     variant="outline" 
                     size="lg"
-                    className="font-poppins font-medium h-12 px-6 border-blue-400 text-black hover:bg-blue-400/10"
+                    className="font-poppins font-medium h-12 px-6 border-blue-400 dark:border-blue-400 bg-white dark:bg-white text-black dark:text-black hover:bg-blue-400/10 dark:hover:bg-blue-400/10"
                   >
                     Get Started Today
                   </Button>

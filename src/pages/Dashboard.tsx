@@ -59,7 +59,7 @@ const Dashboard = () => {
                 Start creating amazing content for your readers
               </p>
               <Link to="/create">
-                <Button className="bg-white text-[#1a0b2e] hover:bg-white/90 font-poppins font-medium">
+                <Button className="bg-white dark:bg-white text-[#1a0b2e] dark:text-[#1a0b2e] hover:bg-white/90 dark:hover:bg-white/90 font-poppins font-medium">
                   Create Your First Post
                 </Button>
               </Link>
@@ -83,7 +83,7 @@ const Dashboard = () => {
                 </CardContent>
                 <div className="flex gap-2 border-t border-white/20 p-4">
                   <Link to={`/edit/${post.id}`} className="flex-1">
-                    <Button variant="outline" size="sm" className="w-full border-blue-400 text-black hover:bg-blue-400/10 font-poppins">
+                    <Button variant="outline" size="sm" className="w-full border-blue-400 dark:border-blue-400 bg-white dark:bg-white text-black dark:text-black hover:bg-blue-400/10 dark:hover:bg-blue-400/10 font-poppins">
                       <Pencil className="mr-2 h-4 w-4" />
                       Edit
                     </Button>
@@ -109,7 +109,7 @@ const Dashboard = () => {
                         </AlertDialogDescription>
                       </AlertDialogHeader>
                       <AlertDialogFooter className="flex-col sm:flex-row gap-3 sm:gap-2 mt-6">
-                        <AlertDialogCancel className="w-full sm:w-auto border-white/20 text-black hover:bg-white/10 font-poppins font-medium h-11 px-6">
+                        <AlertDialogCancel className="w-full sm:w-auto border-white/20 dark:border-white/20 text-black dark:text-black hover:bg-white/10 dark:hover:bg-white/10 font-poppins font-medium h-11 px-6">
                           Cancel
                         </AlertDialogCancel>
                         <AlertDialogAction 

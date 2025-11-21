@@ -111,7 +111,7 @@ export const Navbar = () => {
                     <Button
                       variant="default"
                       size="sm"
-                      className="bg-white text-black hover:bg-white/90 font-poppins font-medium p-2 md:px-4"
+                      className="bg-white dark:bg-white text-black dark:text-black hover:bg-white/90 dark:hover:bg-white/90 font-poppins font-medium p-2 md:px-4"
                     >
                       <FileText className="h-4 w-4" />
                     </Button>
@@ -122,7 +122,7 @@ export const Navbar = () => {
                     <Button
                       variant="default"
                       size="sm"
-                      className="bg-white text-black hover:bg-white/90 font-poppins font-medium px-4"
+                      className="bg-white dark:bg-white text-black dark:text-black hover:bg-white/90 dark:hover:bg-white/90 font-poppins font-medium px-4"
                     >
                       Dashboard
                     </Button>
@@ -133,7 +133,7 @@ export const Navbar = () => {
                   onClick={logout}
                   variant="outline"
                   size="sm"
-                  className="border-blue-400 text-black hover:bg-blue-400/10 font-poppins font-medium p-2 md:px-4 flex items-center gap-2"
+                    className="border-blue-400 dark:border-blue-400 bg-white dark:bg-white text-black dark:text-black hover:bg-blue-400/10 dark:hover:bg-blue-400/10 font-poppins font-medium p-2 md:px-4 flex items-center gap-2"
                 >
                   <LogOut className="h-4 w-4" />
                   <span className="hidden md:inline">Logout</span>
@@ -297,7 +297,7 @@ export const Navbar = () => {
                           <Button
                             variant="default"
                             size="sm"
-                            className="w-full bg-white text-black hover:bg-white/90 font-poppins font-medium"
+                            className="w-full bg-white dark:bg-white text-black dark:text-black hover:bg-white/90 dark:hover:bg-white/90 font-poppins font-medium"
                           >
                             Login
                           </Button>
@@ -306,7 +306,7 @@ export const Navbar = () => {
                           <Button
                             variant="default"
                             size="sm"
-                            className="w-full bg-white text-black hover:bg-white/90 font-poppins font-medium"
+                            className="w-full bg-white dark:bg-white text-black dark:text-black hover:bg-white/90 dark:hover:bg-white/90 font-poppins font-medium"
                           >
                             Sign Up
                           </Button>
@@ -324,7 +324,7 @@ export const Navbar = () => {
                           }}
                           variant="outline"
                           size="sm"
-                          className="w-full border-blue-400 text-black hover:bg-blue-400/10 font-poppins font-medium flex items-center justify-center gap-2"
+                          className="w-full border-blue-400 dark:border-blue-400 bg-white dark:bg-white text-black dark:text-black hover:bg-blue-400/10 dark:hover:bg-blue-400/10 font-poppins font-medium flex items-center justify-center gap-2"
                         >
                           <LogOut className="h-4 w-4" />
                           Logout
