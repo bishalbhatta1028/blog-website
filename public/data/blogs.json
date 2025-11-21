@@ -1,0 +1,244 @@
+{
+  "blogs": [
+    {
+      "id": "1",
+      "title": "How Paynext Helped Small Businesses Thrive",
+      "category": "Finance Tips",
+      "date": "October 25, 2024",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop",
+      "excerpt": "Discover how Paynext's innovative payment solutions have transformed small businesses across the globe."
+    },
+    {
+      "id": "2",
+      "title": "Scaling Your Business with Digital Payments",
+      "category": "Fintech",
+      "date": "November 10, 2024",
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+      "excerpt": "Learn how digital payment solutions can help your business scale efficiently and reach new markets."
+    },
+    {
+      "id": "3",
+      "title": "The Ultimate Guide to Smart Financial Planning",
+      "category": "Finance Tips",
+      "date": "November 24, 2024",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+      "excerpt": "Master the art of financial planning with our comprehensive guide to smart money management."
+    },
+    {
+      "id": "4",
+      "title": "Understanding Cryptocurrency and Blockchain",
+      "category": "Fintech",
+      "date": "December 1, 2024",
+      "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
+      "excerpt": "A beginner's guide to understanding cryptocurrency, blockchain technology, and their impact on finance."
+    },
+    {
+      "id": "5",
+      "title": "Budgeting Strategies for Young Professionals",
+      "category": "Budgeting",
+      "date": "December 5, 2024",
+      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
+      "excerpt": "Essential budgeting strategies to help young professionals build wealth and achieve financial goals."
+    },
+    {
+      "id": "6",
+      "title": "Protecting Your Financial Data Online",
+      "category": "Security",
+      "date": "December 8, 2024",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      "excerpt": "Learn how to protect your sensitive financial information from cyber threats and data breaches."
+    },
+    {
+      "id": "7",
+      "title": "AI and Machine Learning in Financial Services",
+      "category": "Technology",
+      "date": "December 12, 2024",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+      "excerpt": "Exploring how artificial intelligence and machine learning are revolutionizing financial services."
+    },
+    {
+      "id": "8",
+      "title": "Mobile Banking: The Future of Finance",
+      "category": "Fintech",
+      "date": "December 15, 2024",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      "excerpt": "How mobile banking apps are changing the way we manage our finances and interact with banks."
+    },
+    {
+      "id": "9",
+      "title": "Creating a Monthly Budget That Works",
+      "category": "Budgeting",
+      "date": "December 18, 2024",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+      "excerpt": "Step-by-step guide to creating a realistic monthly budget that you can actually stick to."
+    },
+    {
+      "id": "10",
+      "title": "Two-Factor Authentication: Why It Matters",
+      "category": "Security",
+      "date": "December 20, 2024",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      "excerpt": "Understanding the importance of two-factor authentication in securing your financial accounts."
+    },
+    {
+      "id": "11",
+      "title": "Investment Tips for Beginners",
+      "category": "Finance Tips",
+      "date": "December 22, 2024",
+      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
+      "excerpt": "Essential investment strategies and tips for those just starting their investment journey."
+    },
+    {
+      "id": "12",
+      "title": "Cloud Computing in Financial Institutions",
+      "category": "Technology",
+      "date": "December 25, 2024",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+      "excerpt": "How cloud computing is transforming financial institutions and improving operational efficiency."
+    },
+    {
+      "id": "13",
+      "title": "Peer-to-Peer Lending Explained",
+      "category": "Fintech",
+      "date": "December 28, 2024",
+      "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
+      "excerpt": "A comprehensive guide to peer-to-peer lending and how it's disrupting traditional banking."
+    },
+    {
+      "id": "14",
+      "title": "Emergency Fund: Your Financial Safety Net",
+      "category": "Budgeting",
+      "date": "January 2, 2025",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+      "excerpt": "Why an emergency fund is crucial and how to build one that protects you from financial shocks."
+    },
+    {
+      "id": "15",
+      "title": "Phishing Attacks: How to Stay Safe",
+      "category": "Security",
+      "date": "January 5, 2025",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      "excerpt": "Learn to identify and protect yourself from phishing attacks targeting your financial information."
+    },
+    {
+      "id": "16",
+      "title": "Retirement Planning: Start Early, Retire Comfortably",
+      "category": "Finance Tips",
+      "date": "January 8, 2025",
+      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
+      "excerpt": "The importance of early retirement planning and strategies to secure your financial future."
+    },
+    {
+      "id": "17",
+      "title": "Blockchain Security Best Practices",
+      "category": "Security",
+      "date": "January 10, 2025",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      "excerpt": "Essential security practices for protecting your blockchain assets and cryptocurrency wallets."
+    },
+    {
+      "id": "18",
+      "title": "Automated Savings: Set It and Forget It",
+      "category": "Budgeting",
+      "date": "January 12, 2025",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+      "excerpt": "How automated savings tools can help you build wealth without thinking about it."
+    },
+    {
+      "id": "19",
+      "title": "Open Banking: The Future of Financial Services",
+      "category": "Fintech",
+      "date": "January 15, 2025",
+      "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
+      "excerpt": "Understanding open banking and how it's creating new opportunities for financial innovation."
+    },
+    {
+      "id": "20",
+      "title": "Debt Management Strategies That Work",
+      "category": "Finance Tips",
+      "date": "January 18, 2025",
+      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
+      "excerpt": "Proven strategies for managing and eliminating debt to achieve financial freedom."
+    },
+    {
+      "id": "21",
+      "title": "Biometric Authentication in Banking",
+      "category": "Technology",
+      "date": "January 20, 2025",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+      "excerpt": "How biometric authentication is enhancing security and user experience in banking."
+    },
+    {
+      "id": "22",
+      "title": "Zero-Based Budgeting: A Complete Guide",
+      "category": "Budgeting",
+      "date": "January 22, 2025",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+      "excerpt": "Master the zero-based budgeting method to take complete control of your finances."
+    },
+    {
+      "id": "23",
+      "title": "Credit Score Improvement Tips",
+      "category": "Finance Tips",
+      "date": "January 25, 2025",
+      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
+      "excerpt": "Practical tips and strategies to improve your credit score and unlock better financial opportunities."
+    },
+    {
+      "id": "24",
+      "title": "Encryption: Protecting Your Digital Transactions",
+      "category": "Security",
+      "date": "January 28, 2025",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      "excerpt": "Understanding encryption and how it keeps your online financial transactions secure."
+    },
+    {
+      "id": "25",
+      "title": "Robo-Advisors: Automated Investment Management",
+      "category": "Technology",
+      "date": "February 1, 2025",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+      "excerpt": "How robo-advisors are making professional investment management accessible to everyone."
+    },
+    {
+      "id": "26",
+      "title": "The 50/30/20 Budget Rule Explained",
+      "category": "Budgeting",
+      "date": "February 3, 2025",
+      "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+      "excerpt": "Learn how to apply the popular 50/30/20 budgeting rule to manage your income effectively."
+    },
+    {
+      "id": "27",
+      "title": "Digital Wallets: Convenience Meets Security",
+      "category": "Fintech",
+      "date": "February 5, 2025",
+      "image": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=600&fit=crop",
+      "excerpt": "Exploring the benefits and security features of digital wallets in modern payment systems."
+    },
+    {
+      "id": "28",
+      "title": "Tax Planning Strategies for Individuals",
+      "category": "Finance Tips",
+      "date": "February 8, 2025",
+      "image": "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&h=600&fit=crop",
+      "excerpt": "Smart tax planning strategies to minimize your tax burden and maximize your savings."
+    },
+    {
+      "id": "29",
+      "title": "Multi-Factor Authentication Best Practices",
+      "category": "Security",
+      "date": "February 10, 2025",
+      "image": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop",
+      "excerpt": "Best practices for implementing and using multi-factor authentication to secure your accounts."
+    },
+    {
+      "id": "30",
+      "title": "Quantum Computing and Financial Security",
+      "category": "Technology",
+      "date": "February 12, 2025",
+      "image": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=600&fit=crop",
+      "excerpt": "How quantum computing is set to revolutionize financial security and encryption methods."
+    }
+  ]
+}
