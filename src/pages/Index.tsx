@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { PenSquare, BookOpen } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
@@ -7,6 +8,19 @@ import { BlogSection } from '@/components/BlogSection';
 
 const Index = () => {
   const { isAuthenticated } = useAuth();
+  const location = useLocation();
+
+  // Scroll to blogs section if hash is present
+  useEffect(() => {
+    if (location.hash === '#blogs') {
+      setTimeout(() => {
+        const element = document.getElementById('blogs');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location.hash]);
 
   return (
     <div className="bg-gradient-to-br from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e] relative overflow-hidden">

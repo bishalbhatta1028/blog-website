@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
+import { useTheme } from '@/contexts/ThemeContext';
 import { Button } from '@/components/ui/button';
-import { FileText, PenSquare, LogOut, Home, Menu, X } from 'lucide-react';
+import { FileText, PenSquare, LogOut, Home, Menu, X, Sun, Moon } from 'lucide-react';
 import {
   Sheet,
   SheetContent,
@@ -13,17 +14,27 @@ import {
 
 export const Navbar = () => {
   const { isAuthenticated, logout } = useAuth();
+  const { theme, toggleTheme } = useTheme();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isHomePage = location.pathname === '/';
+  const isBlogDetailPage = location.pathname.startsWith('/blog/');
   const isDashboardPage = location.pathname.startsWith('/dashboard') || 
                           location.pathname.startsWith('/create') || 
                           location.pathname.startsWith('/edit');
+  
+  // Use purple background for blog detail page, otherwise use glassmorphism
+  const navbarBg = isBlogDetailPage 
+    ? 'bg-gradient-to-br from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e] border-white/20'
+    : 'bg-white/10 backdrop-blur-md border-white/20 dark:bg-gray-900/10 dark:border-gray-800/20';
 
+  // Don't use fixed positioning on blog detail page
+  const navPosition = isBlogDetailPage ? 'relative' : 'fixed top-0 left-0 right-0 z-50 w-full';
+  
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 w-full">
+    <nav className={navPosition}>
       <div className="container mx-auto px-4 py-4">
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-4 md:px-6 py-3 flex items-center justify-between">
+        <div className={`${navbarBg} border rounded-lg px-4 md:px-6 py-3 flex items-center justify-between`}>
           {/* Logo - Smaller on mobile */}
           <Link to="/" className="flex items-center space-x-2" onClick={() => setMobileMenuOpen(false)}>
             <div className="flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-lg bg-white text-[#1a0b2e] font-bold text-sm md:text-lg font-urbanist">
@@ -54,7 +65,16 @@ export const Navbar = () => {
                 Create Blog
               </Link>
               <Link
-                to="/"
+                to="/#blogs"
+                onClick={(e) => {
+                  if (location.pathname === '/') {
+                    e.preventDefault();
+                    const element = document.getElementById('blogs');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }
+                }}
                 className="flex items-center gap-2 text-white hover:text-white/80 font-poppins text-sm font-medium transition-colors"
               >
                 <Home className="h-4 w-4" />
@@ -142,6 +162,21 @@ export const Navbar = () => {
               </>
             )}
 
+            {/* Theme Toggle Button */}
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleTheme}
+              className="text-white dark:text-gray-300 hover:bg-white/10 dark:hover:bg-gray-800/10 p-2"
+              aria-label="Toggle theme"
+            >
+              {theme === 'light' ? (
+                <Moon className="h-5 w-5" />
+              ) : (
+                <Sun className="h-5 w-5" />
+              )}
+            </Button>
+
             {/* Mobile Menu Button */}
             <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
@@ -196,8 +231,19 @@ export const Navbar = () => {
                           Create Blog
                         </Link>
                         <Link
-                          to="/"
-                          onClick={() => setMobileMenuOpen(false)}
+                          to="/#blogs"
+                          onClick={(e) => {
+                            setMobileMenuOpen(false);
+                            if (location.pathname === '/') {
+                              e.preventDefault();
+                              setTimeout(() => {
+                                const element = document.getElementById('blogs');
+                                if (element) {
+                                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }
+                              }, 100);
+                            }
+                          }}
                           className="flex items-center gap-3 text-white hover:text-white/80 font-poppins text-base font-medium transition-colors p-3 rounded-lg hover:bg-white/10"
                         >
                           <Home className="h-5 w-5" />

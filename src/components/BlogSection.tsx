@@ -1,8 +1,9 @@
 import { useState, useEffect, useMemo } from 'react';
+import { Link } from 'react-router-dom';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight, Search } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Search, ArrowRight } from 'lucide-react';
 import { usePosts } from '@/hooks/usePosts';
 import { format } from 'date-fns';
 
@@ -21,6 +22,14 @@ export const BlogSection = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 6;
+
+  // Helper function to create slug from title
+  const createSlug = (title: string): string => {
+    return title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '');
+  };
 
   // Transform posts to blog format
   const blogs: Blog[] = useMemo(() => {
@@ -94,18 +103,18 @@ export const BlogSection = () => {
   }
 
   return (
-    <section className="bg-white py-16 lg:py-24 relative z-20">
+    <section id="blogs" className="bg-white dark:bg-gray-900 py-16 lg:py-24 relative z-20 scroll-mt-24">
       <div className="container mx-auto px-4 relative z-20">
         {/* Search Bar */}
         <div className="mb-8 max-w-md mx-auto">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400 dark:text-gray-500" />
             <Input
               type="text"
               placeholder="Search articles..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 font-poppins border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+              className="pl-10 font-poppins border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white focus:border-blue-500 dark:focus:border-purple-500 focus:ring-blue-500 dark:focus:ring-purple-500"
             />
           </div>
         </div>
@@ -127,7 +136,7 @@ export const BlogSection = () => {
                 className={`font-poppins font-medium rounded-full px-6 py-2 transition-all cursor-pointer relative z-10 ${
                   isActive
                     ? 'bg-gradient-to-r from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e] text-white hover:from-[#2d1b4e] hover:via-[#3d2b5e] hover:to-[#2d1b4e] border-0'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gradient-to-r hover:from-[#1a0b2e] hover:via-[#2d1b4e] hover:to-[#1a0b2e] hover:text-white border border-gray-300'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gradient-to-r hover:from-[#1a0b2e] hover:via-[#2d1b4e] hover:to-[#1a0b2e] hover:text-white border border-gray-300 dark:border-gray-700'
                 }`}
               >
                 {category}
@@ -140,30 +149,43 @@ export const BlogSection = () => {
         {currentBlogs.length > 0 ? (
           <>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-              {currentBlogs.map((blog) => (
-                <Card key={blog.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                  <div className="aspect-video overflow-hidden bg-gray-100">
-                    <img
-                      src={blog.image}
-                      alt={blog.title}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x600?text=Blog+Image';
-                      }}
-                    />
-                  </div>
-                  <CardContent className="p-6">
-                    <span className="inline-block px-3 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full mb-3 font-poppins">
-                      {blog.category}
-                    </span>
-                    <h3 className="text-xl font-bold mb-2 font-urbanist text-gray-900 line-clamp-2">
-                      {blog.title}
-                    </h3>
-                    <p className="text-sm text-gray-500 mb-4 font-poppins">{blog.date}</p>
-                    <p className="text-gray-600 text-sm line-clamp-3 font-poppins">{blog.excerpt}</p>
-                  </CardContent>
-                </Card>
-              ))}
+              {currentBlogs.map((blog) => {
+                const blogSlug = createSlug(blog.title);
+                return (
+                  <Card key={blog.id} className="overflow-hidden hover:shadow-lg transition-shadow h-full flex flex-col bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700">
+                    <Link to={`/blog/${blogSlug}`}>
+                      <div className="aspect-video overflow-hidden bg-gray-100 dark:bg-gray-700">
+                        <img
+                          src={blog.image}
+                          alt={blog.title}
+                          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          onError={(e) => {
+                            (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x600?text=Blog+Image';
+                          }}
+                        />
+                      </div>
+                    </Link>
+                    <CardContent className="p-6 flex-1 flex flex-col">
+                      <span className="inline-block px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 text-xs font-semibold rounded-full mb-3 font-poppins w-fit">
+                        {blog.category}
+                      </span>
+                      <Link to={`/blog/${blogSlug}`}>
+                        <h3 className="text-xl font-bold mb-2 font-urbanist text-gray-900 dark:text-white line-clamp-2 flex-1 hover:text-[#1a0b2e] dark:hover:text-purple-300 transition-colors">
+                          {blog.title}
+                        </h3>
+                      </Link>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 font-poppins">{blog.date}</p>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-3 font-poppins mb-4">{blog.excerpt}</p>
+                      <Link to={`/blog/${blogSlug}`} className="mt-auto">
+                        <Button className="w-full bg-gradient-to-r from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e] text-white hover:from-[#2d1b4e] hover:via-[#3d2b5e] hover:to-[#2d1b4e] font-poppins font-medium flex items-center justify-center gap-2">
+                          View Detail
+                          <ArrowRight className="h-4 w-4" />
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
 
             {/* Pagination */}
@@ -178,7 +200,7 @@ export const BlogSection = () => {
                   }}
                   disabled={currentPage === 1}
                   style={{ pointerEvents: 'auto', zIndex: 10 }}
-                  className="font-poppins px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-1 relative z-10"
+                  className="font-poppins px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-1 relative z-10"
                 >
                   <ChevronLeft className="h-4 w-4" />
                   Previous
@@ -205,7 +227,7 @@ export const BlogSection = () => {
                           className={`font-poppins px-4 py-2 rounded-md transition-all relative z-10 ${
                             isActive
                               ? 'bg-gradient-to-r from-[#1a0b2e] via-[#2d1b4e] to-[#1a0b2e] text-white hover:from-[#2d1b4e] hover:via-[#3d2b5e] hover:to-[#2d1b4e] border-0'
-                              : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-50'
+                              : 'border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                           }`}
                         >
                           {page}
@@ -227,7 +249,7 @@ export const BlogSection = () => {
                   }}
                   disabled={currentPage === totalPages}
                   style={{ pointerEvents: 'auto', zIndex: 10 }}
-                  className="font-poppins px-4 py-2 rounded-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-1 relative z-10"
+                  className="font-poppins px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all flex items-center gap-1 relative z-10"
                 >
                   Next
                   <ChevronRight className="h-4 w-4" />
@@ -237,7 +259,7 @@ export const BlogSection = () => {
           </>
         ) : (
           <div className="text-center py-16">
-            <p className="text-gray-500 text-lg font-poppins">No articles found matching your criteria.</p>
+            <p className="text-gray-500 dark:text-gray-400 text-lg font-poppins">No articles found matching your criteria.</p>
           </div>
         )}
       </div>
