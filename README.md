@@ -386,6 +386,6 @@ For issues or questions, please open an issue on the repository.
 
 ---
 
-**Built with ❤️ by Bishal Bhatta**
+**Built by Bishal Bhatta**
 
 **Technologies**: React, TypeScript, and Vite
